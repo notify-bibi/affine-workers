@@ -28,7 +28,7 @@ export async function domainRoutersHandler<E>(
 ): Promise<Response> {
   const url = new URL(request.url);
 
-  const routerHandlers = routers[url.hostname];
+  const routerHandlers = routers[url.hostname] || routers["default"];
   if (routerHandlers) {
     for (const key in routerHandlers) {
       if (url.pathname.startsWith(key)) {

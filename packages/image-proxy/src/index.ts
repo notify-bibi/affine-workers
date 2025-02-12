@@ -3,10 +3,10 @@ import { cloneHeader, fixUrl, isOriginAllowed, isRefererAllowed, log, respBadReq
 export async function imageProxy(request: Request) {
   const origin = request.headers.get('Origin') ?? '';
   const referer = request.headers.get('Referer') ?? '';
-  if (!isOriginAllowed(origin) && !isRefererAllowed(referer)) {
+  /*if (!isOriginAllowed(origin) || !isRefererAllowed(referer)) {
     log('Invalid Origin', 'ERROR', { origin, referer });
     return respNotFound();
-  }
+  }*/
 
   const url = new URL(request.url);
   const imageURL = url.searchParams.get('url');

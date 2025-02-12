@@ -1,0 +1,8 @@
+# .dockerignore
+node_modules
+package-lock.json
+README.md
+.*/
+.*
+.wrangler
+__test__

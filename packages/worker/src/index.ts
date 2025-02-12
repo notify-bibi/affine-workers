@@ -6,7 +6,7 @@ const WORKER_DOMAIN = 'affine-worker.toeverything.workers.dev';
 
 const affine = AFFiNEWorker();
 
-const routers = DomainRouterBuilder.create<Env>().add('localhost', '/api/', affine).add(WORKER_DOMAIN, '/api/', affine).build();
+const routers = DomainRouterBuilder.create<Env>().add('default', '/api/', affine).add('localhost', '/api/', affine).add(WORKER_DOMAIN, '/api/', affine).build();
 
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {

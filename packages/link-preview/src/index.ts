@@ -24,10 +24,10 @@ async function reduceUrls(baseUrl: string, urls?: string[]) {
 export async function linkPreview(request: Request): Promise<Response> {
   const origin = request.headers.get('Origin');
   const referer = request.headers.get('Referer');
-  if ((origin && !isOriginAllowed(origin)) || (referer && !isRefererAllowed(referer))) {
+  /*if ((origin && !isOriginAllowed(origin)) || (referer && !isRefererAllowed(referer))) {
     log('Invalid Origin', 'ERROR', { origin, referer });
     return respBadRequest('Invalid header');
-  }
+  }*/
 
   log('Received request', 'INFO', { origin, method: request.method });
 
